@@ -1,7 +1,7 @@
 # Testing SQLite with Expo Router API Routes
 
 ## How to try it
-- install with bun
+- install with NPM
 - Run it
 - Press the "Try Sequelize' or "Try Plain SQLite" button depending on what you want to do. Each one sends a POST to an API route to insert a record.
 
@@ -65,3 +65,9 @@ Call Stack
   metroRequire (node_modules/metro-runtime/src/polyfills/require.js:127:7)
  LOG  [SyntaxError: JSON Parse error: Unexpected character: F]
 ```
+
+## Control: do SQLite stuff in Node
+Run `node justsqlite.js` to do the database initialization step. Added this just to make sure I hadn't messed up the SQLite commands. It should create the database, which doesn't happen on the "Plain SQLite" option above.
+
+### Interesting thing
+On the control experiment, I originally got `could not locate the bindings file` (see https://github.com/nodejs/node-gyp/issues/1511). I ran `npm rebuild` and then it worked. But, when the errors occurred, they referenced paths that looked like the **../build/node_sqlite3.node** paths, except they were in **node_modules/sqlite3/**. It just made me wonder if Metro is truncating a path in the Plain SQLite error above.

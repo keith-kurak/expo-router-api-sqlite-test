@@ -1,6 +1,6 @@
 import { ExpoRequest, ExpoResponse } from 'expo-router/server';
 import { Sequelize, DataTypes } from 'sequelize';
-import SQLite from 'sqlite3';
+//import SQLite from 'sqlite3';
 
 // NOTE: pg-hstore is added to resolve this error:
 // https://github.com/sequelize/sequelize/issues/7509
